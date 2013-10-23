@@ -1,0 +1,23 @@
+﻿@model JoelCode.Web.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Authentication", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+        <br />
+        @Html.LabelFor(x => x.Password)
+        @Html.PasswordFor(x => x.Password)
+        @Html.ValidationMessageFor(x => x.Password)
+        <br />
+        @Html.ValidationSummary(true)
+        <br />
+        <button type="submit">Login</button>
+    </div>
+}
